@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm8uvym78c5f6"]
+
+[ext_resource type="Script" path="res://scripts/monster.gd" id="1_271ge"]
+[ext_resource type="Texture2D" uid="uid://cftvyehu8tvlo" path="res://sprites/draine_idle.png" id="2_8ablg"]
+
+[node name="monster" type="Node2D"]
+script = ExtResource("1_271ge")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8ablg")
+
+[node name="bullet spawn" type="Node2D" parent="."]
+position = Vector2(120, -23)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

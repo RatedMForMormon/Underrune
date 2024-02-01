@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyev6tjxaefq6"]
+
+[ext_resource type="PackedScene" uid="uid://rm5fdmq1lpuy" path="res://scenes/player.tscn" id="1_wsf8f"]
+[ext_resource type="PackedScene" uid="uid://dm8uvym78c5f6" path="res://scenes/monster.tscn" id="2_kbsjr"]
+
+[node name="main" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="player" parent="." instance=ExtResource("1_wsf8f")]
+position = Vector2(492, 275)
+
+[node name="monster" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_kbsjr")]
+position = Vector2(127, 108)
+target = NodePath("../player")
